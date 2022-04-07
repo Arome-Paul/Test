@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign up | Log in</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" type="text/css" />
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      /*border: 1px solid pink;*/
+    }
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    body {
+      padding: 0;
+      background: rgba(0,0,0,0.05);
+      font-family: arial, Tahoma, aerial;
+    }
+    header {
+      background: black;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-family: Tahoma;
+    }
+    header img {
+      width:;
+    }
+    #form-section {
+      display: flex;
+      justify-content: center;
+    }
+    #form-section-container {
+      width: 90%;
+      padding-top: 30px;
+    }
+    #tabs ul {
+      width: 180px;
+      display: flex;
+      flex-wrap: wrap;
+      float: right;
+      margin-bottom: 3px;
+    }
+    #tabs ul li {
+      width: 80px;
+      text-align: center;
+      padding: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      transitransition
+    }
+    #tabs ul li:active {
+      background: rgba(0,0,0,0.1);
+    }
+    #tabs ul li#login-tab {
+      background: rgba(0,0,0,0.1);
+      color: green;
+    }
+    #tabs ul #tab-underliner {
+      width: 90px;
+      height: 4px;
+      background: green;
+      transform: translate(0,0);
+      transition: 400ms;
+    }
+    .form-content {
+      clear: both;
+      background: white;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-radius: 5px;
+    }
+    .form-content form h3 {
+      width: 80%;
+      bordler: 1px solid blue;
+      padding: 10px 20px 0 0;
+    }
+    input.box,button.box {
+      width: 80%;
+      margin: 10px 0 10px 0;
+      font-family: tahoma;
+      font-size: 16px;
+      padding: 10px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 4px;
+      transition: 400ms;
+    }
+    input.box:focus,button.box:focus {
+      border: 1px solid rgba(0,0,225,0.3);
+      outline: medium outset rgba(0,225,0,0.1);
+    }
+    i.eyes {
+      display: inline;
+      position: absolute;
+      transform: translate(-30px,18px);
+      font-size: 23px;
+    }
+    i.eyes:active {
+      color: red;
+    }
+    div#form2 {
+      display: none;
+    }
+    #message {
+      color: red;
+    }
+    #reset-pass {
+      margin-top: 7px;
+    }
+    #reset-pass a {
+      text-decoration: underline;
+      color: blue;
+      font-weight: bold;
+    }
+    #login-btn,#signup-btn {
+      background: green;
+      border: 2px solid green;
+      letter-spacing: 1px;
+      margin: 10px 0 20px 0;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+      transition: 50ms;
+    }
+    #login-btn:active,#signup-btn:active {
+      background: white;
+      color: green;
+    }
+    .note {
+      margin-bottom: 5%;
+    }
+    .switch-btn {
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 5px;
+      color: blue;
+    }
+    #cate-label {
+      display: flex;
+      font-size: 18px;
+      font-weight: bold;
+      width: 80%;
+      padding: 0 20px 5px 0;
+      bolrder: 1px solid green;
+    }
+    #cate-content {
+      display: block;
+      font-size: 16px;
+      width: 80%;
+      padding: 5px 20px 0 0;
+      line-height: 2;
+      boder: 1px solid blue;
+    }
+    #cate-content input {
+      margin-left: 10px;
+    }
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      white-space: wrap;
+      justify-content: center;
+    }
+    #about h3 {
+      display: block;
+      width: 100%;
+      margin: 10px 0 10px 0;
+    }
+    #about-container {
+      width: 65%;
+      background: white;
+      margin-top:;
+      padding: 0 10px 10px 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 1px 1px rgba(0,0,0,0.2);
+    }
+    #about-container img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50px;
+      margin: 8px 0 8px 0;
+      box-shadow: 0 0 1px 2px rgba(0,0,0,0.3);
+    }
+    #about-container h4 {
+      margin-bottom: 5px;
+    }
+    #about-content {
+      font-family: arial;
+    }
+    footer {
+      text-align: center;
+      background:;
+      padding: 10px;
+      color: black;
+      margin-top: 10px;
+    }
+    footer a {
+      color: black;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="other">
+      
+  </div>
+  <div id="body">
+    <header>
+      <!--logo image -->
+      <img src="" alt="logo" />
+    </header>
+    <section id="form-section">
+      <div id="form-section-container">
+        <div id="tabs">
+          <ul>
+            <li id="login-tab" class="login-switch"><i class="fas fa-sign-in-alt"></i> Login</li>
+            <li class="signup-tab"><i class="fa fa-user-plus"></i> Sign up</li>
+            <span id="tab-underliner"></span>
+          </ul>
+        </div>
+        <div id="forms">
+          <div id="form1" class="form-content">
+            <form action="" method="get" id="login-form" autocomplete="off">
+              <h3>login</h3>
+              <input type="email" class="box" placeholder="email/username" required />
+              <input type="password" class="password box" placeholder="password" required />
+              <div id="reset-pass">
+                forgot password? <a href="#" title="Reset Password">reset password</a>
+              </div>
+              <button type="submit" class="box" id="login-btn"><i class="fa fa-sign-in-alt"></i> Login</button>
+              <div class="note">
+                don't have an account?<span class="signup-tab switch-btn"> Sign up</span>
+              </div>
+            </form>
+          </div>
+
+          <div id="form2" class="form-content">
+            <form action="x.html" method="get" id="signup-form" autocomplete="off">
+              <h3>signup</h3>
+              <input type="text" class="box" placeholder="Full Name" required />
+              <input type="text" class="box" placeholder="Username" required />
+              <input type="email" class="box" placeholder="email" required />
+              <input type="password" class="password box" placeholder="password" required />
+              <input type="password" class="password box" placeholder="confirm password" required />
+              <div id="message">
+              </div>
+              <label for="category" id="cate-label">Category: </label>
+              <div id="cate-content">
+                <input type="radio" name="category" id="student" /> Student
+                <input type="radio" name="category" id="self-taugth" /> Self taugth/Freelancer
+                <input type="radio" name="category" id="company" /> Company/Organi
+              </div>
+              <button type="submit" class="box" id="signup-btn"><i class="fa fa-user-plus"></i> Signup</button>
+              <div class="note">
+                already have an account?<span class="login-switch switch-btn">  login</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" align="center">
+      <h3>About Us</h3>
+      <div id="about-container">
+        <img src="s1.jpg" alt="your logo image" />
+        <h4>Website name</h4>
+        <div id="about-content">
+          the page descriptions and all about the page goes here
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div id="crt">
+        Copy right ©2021 |  <a href="#">Sitename</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    window.onload = function() {
+      //alert("checked")
+      var loginswitch = document.getElementsByClassName("login-switch");
+      var tabunderliner = document.getElementById("tab-underliner");
+      var signupswitch = document.getElementsByClassName("signup-tab");
+      var formtabs = document.getElementsByClassName("form-content");
+      var viewpass = document.getElementsByClassName("eyes");
+      var eye = document.getElementsByClassName("fa fa-eye");
+      var pass = document.getElementsByClassName("password");
+      var msg = document.getElementById("message");
+      var form = document.getElementsByTagName("form");
+
+      //password validators events
+      form[1].onsubmit = function() {
+        if (pass[1].value == pass[2].value) {
+          msg.innerHTML = "";
+          return true;
+        } else {
+          msg.innerHTML = "the two passwords does not match";
+          return false;
+        }
+      }
+
+      //Events to switch the login/signup tabs
+      for (i = 0; i < 2; i++) {
+        loginswitch[i].onclick = function() {
+          formtabs[0].style.display = "block";
+          formtabs[1].style.display = "none";
+          loginswitch[0].style.background = "rgba(0,0,0,0.1)";
+          loginswitch[0].style.color = "green";
+          signupswitch[0].style.background = "none";
+          signupswitch[0].style.color = "black";
+          tabunderliner.style.transform = "translate(0,0)";
+        }
+      }
+
+      for (x = 0; x < signupswitch.length; x++) {
+        signupswitch[x].onclick = function() {
+          formtabs[0].style.display = "none";
+          formtabs[1].style.display = "block";
+          loginswitch[0].style.background = "none";
+          loginswitch[0].style.color = "black";
+          signupswitch[0].style.background = "rgba(0,0,0,0.1)";
+          signupswitch[0].style.color = "green";
+          tabunderliner.style.transform = "translate(90px,0)";
+        }
+      }
+
+      //events for viewing/hiding password
+      viewpass[0].onclick = function() {
+        if (pass[0].type == "password") {
+          eye[0].style.color = "green";
+          pass[0].type = "text";
+        } else {
+          pass[0].type = "password";
+          eye[0].style.color = "black";
+        }
+      }
+      viewpass[1].onclick = function() {
+        if (pass[1].type == "password") {
+          eye[1].style.color = "green";
+          pass[1].type = "text";
+        } else {
+          pass[1].type = "password";
+          eye[1].style.color = "black";
+        }
+      }
+      viewpass[2].onclick = function() {
+        if (pass[2].type == "password") {
+          eye[2].style.color = "green";
+          pass[2].type = "text";
+        } else {
+          pass[2].type = "password";
+          eye[2].style.color = "black";
+        }
+      }
+
+
+
+
+    }
+  </script>
+</body>
+</html>
